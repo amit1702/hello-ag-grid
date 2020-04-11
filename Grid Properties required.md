@@ -13,3 +13,7 @@
   * Programmatically reach to last column of the grid. and it should be decent experience
 * Fixed first column.
   * custom style for first column
+  
+  
+### Extra
+* getSelectedNodes

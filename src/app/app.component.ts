@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor() {
     this.gridOptions = {
       ...this.createData(20, 3600),
-      rowSelection: 'single'
+      rowSelection: 'multiple'
     };
   }
 
@@ -37,6 +37,11 @@ export class AppComponent implements OnInit {
     this.goToLastColumn();
   }
 
+  getSelectedNodes = () => {
+    const selectedNodes = this.gridOptions.api.getSelectedNodes();
+    console.log('selectedNodes', selectedNodes);
+  }
+
   createData = (rowCount: number, colCount: number, offset: number = 0) => {
     this.lastColIndex = colCount - 1;
     const rowData = [];
@@ -53,7 +58,9 @@ export class AppComponent implements OnInit {
       const col = {
         headerName: 'Column-' + propertyIndex,
         field: 'col-' + propertyIndex,
-        width: 140
+        width: 140,
+        sortable: true,
+        filter: true
       };
       columnDefs.push(col);
     }
@@ -61,6 +68,7 @@ export class AppComponent implements OnInit {
     columnDefs[0].cellStyle = {
       backgroundColor: 'gray'
     };
+    columnDefs[0].checkboxSelection = true;
 
     return {
       rowData,
