@@ -52,10 +52,16 @@ export class AppComponent implements OnInit {
     for (let propertyIndex = 0; propertyIndex < colCount; propertyIndex++) {
       const col = {
         headerName: 'Column-' + propertyIndex,
-        field: 'col-' + propertyIndex
+        field: 'col-' + propertyIndex,
+        width: 140
       };
       columnDefs.push(col);
     }
+    columnDefs[0].pinned = 'left';
+    columnDefs[0].cellStyle = {
+      backgroundColor: 'gray'
+    };
+
     return {
       rowData,
       columnDefs
