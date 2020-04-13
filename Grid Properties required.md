@@ -2,7 +2,9 @@
 
 ### To investigate
 * custom style cells.
-* Fixed last row
+* **Fixed last row**
+  * fix last row.
+  * Use 2 grids, which are in sync.
 * Programmetically highlight a particular column of the grid and go to that column of the grid.
 * line seperating columns
 
