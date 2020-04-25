@@ -1,3 +1,7 @@
+# My notes
+
+Ag-grid demo created over a weekend. Should not be deleted.
+
 # HelloAgGrid
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
